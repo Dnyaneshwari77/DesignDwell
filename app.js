@@ -7,7 +7,14 @@ const port = 5000;
 
 const path = require("path");
 
-app.use(cors());
+// app.use(cors());
+const corsOptions = {
+  origin: "https://designdwell-final.onrender.com", // Replace with your frontend's URL
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Enable credentials (if needed)
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(fileUpload({ useTempFiles: true }));
 
