@@ -32,10 +32,9 @@ app.use("/", authRouter);
 app.use("/designer/", designerRouter);
 app.use("/work/", sampleRouter, BeforeAfter);
 
-// //static file
+app.use(express.static(path.join(__dirname, "./client/build")));
 
-app.use(express.static(path.join(__dirname, "./client/build/index.html")));
-
+// Handle all other routes by serving the index.html
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
