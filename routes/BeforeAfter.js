@@ -10,7 +10,7 @@ const {
 } = require("../controllers/BeforeAfter");
 
 router.post("/beforeAfter", uploadBeforeAfter);
-router.get("/beforeAfter/:developer_id",  getsBeforeAfter);
-router.get("/beforeAfter/", authentication,getAllBeforeAfter);
+router.get("/beforeAfter/:developer_id", getsBeforeAfter);
+router.get("/beforeAfter/", getAllBeforeAfter);
 
 module.exports = router;
