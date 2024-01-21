@@ -20,6 +20,19 @@ const auth = async (req, res, next) => {
       lastName: payload.lastName,
       Email: payload.email,
     };
+    // Set CORS headers
+    res.setHeader(
+      "Access-Control-Allow-Origin",
+      "https://designdwell-final.onrender.com"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET,HEAD,PUT,PATCH,POST,DELETE"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Authorization, Content-Type"
+    );
 
     next();
   } catch (error) {
